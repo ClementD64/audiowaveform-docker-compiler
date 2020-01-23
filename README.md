@@ -1,5 +1,5 @@
 # audiowaveform-docker-compiler
-Compile audiowaveform using docker
+Compile [audiowaveform](https://github.com/bbc/audiowaveform) using docker
 
 ## Usage
 
