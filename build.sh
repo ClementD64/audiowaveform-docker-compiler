@@ -1,12 +1,19 @@
 #!/bin/sh
 
-# create the audiowaveform image
-docker image build -t audiowaveform .
+# generate unique build id
+BUILD_ID=$(cat /proc/sys/kernel/random/uuid)
+
+# create the image
+docker build -t $BUILD_ID .
+
 # create the container
-docker create -ti --name audiowaveform audiowaveform 
+CONTAINER_ID=$(docker create $BUILD_ID)
+
 # copy the file   
-docker cp audiowaveform:/a/audiowaveform ./audiowaveform
+docker cp $CONTAINER_ID:/_/audiowaveform ./audiowaveform
+
 # remove the container
-docker rm -f audiowaveform
+docker rm $CONTAINER_ID
+
 # remove the image
-docker rmi audiowaveform
+docker rmi $BUILD_ID

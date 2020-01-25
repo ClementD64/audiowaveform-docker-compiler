@@ -1,10 +1,10 @@
-# audiowaveform-docker-compiler
+# Audiowaveform Docker Compiler
 Compile [audiowaveform](https://github.com/bbc/audiowaveform) using docker
 
 ## Usage
 
 ```sh
-git clone https://github.com/ClementD64/audiowaveform-docker-compiler
+git clone https://github.com/ClementD64/audiowaveform-docker-compiler.git
 cd audiowaveform-docker-compiler
 sh build.sh
 ```

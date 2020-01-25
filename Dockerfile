@@ -1,4 +1,5 @@
 FROM debian:buster-slim
+LABEL stage=build
 
 # install dependencies
 RUN apt-get update
@@ -7,8 +8,8 @@ RUN apt-get install -y wget git make cmake gcc g++ libmad0-dev \
     libboost-program-options-dev libboost-regex-dev
 
 # clone audiowaveform
-RUN git clone https://github.com/bbc/audiowaveform.git a
-WORKDIR /a
+RUN git clone https://github.com/bbc/audiowaveform.git /_
+WORKDIR /_
 
 # build audiowaveform
 RUN cmake -D BUILD_STATIC=1 -D ENABLE_TESTS=0
